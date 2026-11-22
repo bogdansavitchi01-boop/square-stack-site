@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Square Stack store </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/skin3d.js"></script>
+    <script defer src="js/magazin.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>⛏️ SQUARE STACK</h1>
+        <div>BUILD • EXPLORE • PLAY TOGETHER</div>
+    </header>
+    <nav><a href="index.html">🏠 Acasă</a><a href="magazin.html">🛒 Magazin</a></nav>
+    <main>
+        <h2>🛒 Square Stack Store 2.1</h2>
+        <p class="notice">🧪 Magazin demonstrativ. Prețurile sunt exemple în MDL. Nu există plăți reale și nu se
+            colectează date bancare
+            dar da că vreți să cumpărați produse puteți veni în viața reală adresa va fi trimisă în gmail. Banii sunt
+            doar cash.
+        </p>
+        <div class="tools"><input id="search" type="search" placeholder="🔍 Caută produse..."
+                aria-label="Caută produse"><select id="filter" aria-label="Filtrează categoria">
+                <option value="all">Toate</option>
+                <option value="skin">Skinuri</option>
+                <option value="texture">Texturi</option>
+                <option value="mod">Moduri</option>
+            </select></div>
+        <div class="layout">
+            <section>
+                <div class="grid" id="products"></div>
+                <p id="no-results" hidden>Nu am găsit produse.</p>
+            </section>
+            <aside class="cart">
+                <h2>🛍️ Coșul meu</h2>
+                <div id="cart-items"></div>
+                <p class="cart-total">Total: <span id="total">0 MDL</span></p><button class="btn"
+                    id="checkout">Finalizează comanda (demo)</button>
+                <p id="message" role="status" aria-live="polite"></p>
+            </aside>
+        </div>
+
+        <form id="formular-squarestack" class="formular-modern">
+            <h2>Trimite-ne un mesaj</h2>
+
+            <input type="hidden" name="access_key" value="533281c6-3bb1-4161-8dde-ebc3a74d7667">
+            <input type="hidden" name="subject" value="Mesaj nou de pe Square Stack!">
+
+            <label for="nume" class="nume">Nume:</label>
+            <input type="text" id="nume" name="Nume" placeholder="Ex: Ion Popescu" required class="nume">
+
+            <label for="email" class="email">Email:</label>
+            <input type="email" id="email" name="Email" placeholder="Ex: nume@exemplu.com" required class="email">
+
+            <label for="mesaj" class="mesaj">Mesaj:</label>
+            <textarea id="mesaj" name="Mesaj" rows="5" placeholder="Scrie mesajul tău aici..." required
+                class="mesaj"></textarea>
+
+            <button type="submit" id="btn-trimite">Trimite mesajul</button>
+            <p id="mesaj-status" class="status-text"></p>
+        </form>
+        <script>
+            const form = document.getElementById('formular-squarestack');
+            const statusText = document.getElementById('mesaj-status');
+            const btnTrimite = document.getElementById('btn-trimite');
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                btnTrimite.innerText = "Se trimite...";
+                btnTrimite.disabled = true;
+
+                const formData = new FormData(form);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+                const adresa = "https://" + "api." + "web3forms.com" + "/submit";
+
+                try {
+                    const response = await fetch(adresa, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: json
+                    });
+                    const result = await response.json();
+
+                    if (response.status === 200) {
+                        statusText.innerText = "✔ Mesajul a fost trimis cu succes!";
+                        statusText.style.color = "#4ade80";
+                        form.reset();
+                    } else {
+                        statusText.innerText = "✖ Eroare: " + result.message;
+                        statusText.style.color = "#f87171";
+                    }
+                } catch (error) {
+                    statusText.innerText = "✖ Eroare de conexiune.";
+                    statusText.style.color = "#f87171";
+                } finally {
+                    btnTrimite.innerText = "Trimite mesajul";
+                    btnTrimite.disabled = false;
+                }
+            });
+        </script>
+
+    </main>
+    <footer>© 2026 Square Stack • Magazin demonstrativ</footer>
+   
+</body>
+
+</html>
