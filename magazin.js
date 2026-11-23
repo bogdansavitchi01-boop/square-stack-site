@@ -70,7 +70,7 @@ const products = [
         version: '1.0',
         description: 'Mod tehnologic cu energie, electricitate și blocuri interactive.'
     },
-     {
+    {
         id: 'electricity',
         name: 'Electricity',
         category: 'mod',
@@ -78,6 +78,7 @@ const products = [
         price: 40,
         version: '1.0',
         description: 'Sisteme electrice, cabluri și utilaje moderne pentru o bază inteligentă.'
+
     }
 ];
 
@@ -129,6 +130,19 @@ function save() {
 // PREȚ
 function money(n) {
     return n.toLocaleString('ro-RO') + ' MDL';
+}
+
+function downloadGame(platform) {
+    const DOWNLOADS = {
+        android: 'https://github.com/bogdansavitchi01-boop/square-stack-multiplayer/releases/latest/download/SquareStack.apk',
+        windows: 'https://github.com/bogdansavitchi01-boop/square-stack-multiplayer/releases/latest/download/SquareStack-Setup.exe'
+    };
+
+    const url = DOWNLOADS[platform];
+
+    if (url) {
+        window.location.href = url;
+    }
 }
 
 // DESCHIDE PAGINA PRODUSULUI
