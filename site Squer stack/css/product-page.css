@@ -1,0 +1,568 @@
+/* ========================================
+   SQUARE STACK - STYLE.CSS
+   ======================================== */
+
+/* PAGINI PRODUSE */
+
+
+ * {
+            box-sizing: border-box
+        }
+
+        .skin-3d {
+            width: 100%;
+            height: 230px;
+            background: #193e29;
+            border-radius: 10px;
+            cursor: grab;
+            touch-action: none;
+        }
+
+        .skin-3d:active {
+            cursor: grabbing;
+        }
+
+        body {
+            margin: 0;
+            background: #101b15;
+            color: #fff;
+            font-family: Arial, sans-serif
+        }
+
+        header {
+            text-align: center;
+            background: #193e29;
+            padding: 24px;
+            border-bottom: 4px solid #4ce57b
+        }
+
+        h1,
+        h2 {
+            color: #6cf096
+        }
+
+        h1 {
+            margin: 0 0 8px
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            background: #14291c;
+            padding: 15px
+        }
+
+        nav a {
+            color: #6cf096;
+            text-decoration: none;
+            font-weight: bold
+        }
+
+        .preview {
+            background: #193e29;
+            min-height: 150px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 16px
+        }
+
+        .notice {
+            background: #20382a;
+            border-left: 4px solid #6cf096;
+            padding: 14px;
+            border-radius: 8px
+        }
+
+        .tools {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 22px 0
+        }
+
+        input,
+        select {
+            padding: 12px;
+            background: #20382a;
+            color: white;
+            border: 1px solid #388d55;
+            border-radius: 8px;
+            font-size: 16px;
+            flex: 1;
+            min-width: 180px
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 310px;
+            gap: 20px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 15px
+        }
+
+        .card,
+        .cart {
+            background: #20382a;
+            border: 2px solid #388d55;
+            border-radius: 15px;
+            padding: 18px
+        }
+
+        .card {
+            text-align: center
+        }
+
+        .emoji {
+            font-size: 55px;
+            background: #193e29;
+            border-radius: 10px;
+            padding: 15px
+        }
+
+        .price {
+            color: #a2ffbc;
+            font-size: 20px;
+            font-weight: bold
+        }
+
+        .btn {
+            background: #48d575;
+            color: #102015;
+            border: 0;
+            border-radius: 9px;
+            padding: 12px 14px;
+            font-weight: bold;
+            cursor: pointer
+        }
+
+        .btn:hover {
+            background: #83ffa5
+        }
+
+        .btn:disabled {
+            opacity: .5;
+            cursor: not-allowed
+        }
+
+        .card .btn {
+            width: 100%
+        }
+
+        .cart {
+            align-self: start
+        }
+
+        .cart-row {
+            border-bottom: 1px solid #388d55;
+            padding: 12px 0
+        }
+
+        .cart-row small {
+            color: #c9d9ce
+        }
+
+        .qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px
+        }
+
+        .qty button {
+            border: 1px solid #6cf096;
+            border-radius: 6px;
+            background: transparent;
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer
+        }
+
+        .cart-total {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 18px 0
+        }
+
+        .cart .btn {
+            width: 100%
+        }
+
+        #message {
+            margin-top: 12px;
+            color: #b9ffd0
+        }
+
+        footer {
+            text-align: center;
+            background: #0b130e;
+            padding: 25px;
+            margin-top: 45px;
+            color: #b4c8ba
+        }
+
+        @media(max-width:760px) {
+            .layout {
+                grid-template-columns: 1fr
+            }
+        }
+
+/* Square Stack Store 2.1 */
+.view-3d-btn { margin-top: 8px; background: #284e36; color:#b9ffd0; border:1px solid #6cf096; }
+.view-3d-btn:hover {background:#366647;}
+#skin-modal {color:#fff; background:#20382a; border:2px solid #388d55; border-radius:16px; width:min(420px, 94vw); padding:16px;}
+#skin-modal::backdrop { background:rgba(0,0,0,.75); }
+.viewer-top {display:flex; gap:12px; align-items:center; justify-content:space-between;}
+.skin-stage {position:relative; height:270px; background:#14291c; border-radius:10px; perspective:650px; overflow:hidden; touch-action:none; cursor:grab;}
+.skin-stage:active {cursor:grabbing;}
+#skin-model {position:absolute; left:50%; top:50%; width:0; height:0; transform-style:preserve-3d;}
+.skin-part {position:absolute; transform-style:preserve-3d; width:0; height:0;}
+.skin-face {position:absolute; left:0; top:0; background-repeat:no-repeat; image-rendering:pixelated; backface-visibility:hidden;}
+.downloads {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:16px;}
+.download-button {display:inline-block; color:#b9ffd0; font-weight:bold; padding:12px; border:1px solid #388d55; border-radius:8px;}
+.download-button[aria-disabled=true] {opacity:.65;cursor:not-allowed;}
+
+
+
+.product-page-container {
+    width: min(1120px, calc(100% - 32px));
+    margin: 32px auto 64px;
+    color: #f4f6fb;
+}
+
+.product-breadcrumb {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: #aeb8ca;
+    font-size: 14px;
+}
+
+.product-breadcrumb a,
+.cart-link a {
+    color: #8fc7ff;
+    text-decoration: none;
+}
+
+.product-hero {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 34px;
+    align-items: center;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 22px;
+    background: #121928;
+}
+
+.product-image-wrap {
+    min-height: 320px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .045);
+    overflow: hidden;
+}
+
+.product-main-image {
+    width: 100%;
+    max-height: 440px;
+    object-fit: contain;
+}
+
+.image-fallback {
+    padding: 30px;
+    color: #aeb8ca;
+    text-align: center;
+}
+
+.product-category {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 30px;
+    background: rgba(95, 160, 255, .15);
+    color: #a8d2ff;
+    font-size: 13px;
+}
+
+.product-summary h1 {
+    margin: 14px 0;
+    font-size: clamp(30px, 4vw, 44px);
+}
+
+.product-short-description {
+    color: #c4ccda;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.product-price {
+    margin-top: 22px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.product-tax-note {
+    color: #9da9bb;
+    font-size: 13px;
+}
+
+.product-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 11px 18px;
+    margin: 4px 8px 4px 0;
+    border: 0;
+    border-radius: 11px;
+    background: #3478e5;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.product-button:hover {
+    filter: brightness(1.12);
+}
+
+.product-button.secondary {
+    background: #293448;
+    border: 1px solid rgba(255, 255, 255, .16);
+}
+
+.product-status {
+    min-height: 22px;
+    color: #9fe2b2;
+    font-weight: 600;
+}
+
+.cart-link {
+    color: #bdc7d7;
+    font-size: 14px;
+}
+
+.product-section {
+    margin-top: 26px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 18px;
+    background: #121928;
+}
+
+.product-section h2,
+.product-bottom h2 {
+    margin: 0 0 13px;
+    font-size: 24px;
+}
+
+.product-section p {
+    color: #c4ccda;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.feature-list {
+    display: grid;
+    gap: 10px;
+    padding-left: 22px;
+    color: #dce4f0;
+    line-height: 1.6;
+}
+
+.product-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 15px;
+    background: #121928;
+}
+
+.info-card span {
+    color: #9da9bb;
+    font-size: 13px;
+}
+
+.info-card strong {
+    overflow-wrap: anywhere;
+}
+
+.faq-section details {
+    padding: 14px 0;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    color: #e8edf5;
+}
+
+.faq-section summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.product-bottom {
+    margin-top: 26px;
+    padding: 28px;
+    border-radius: 18px;
+    background: #182b49;
+}
+
+.product-bottom p {
+    color: #c4ccda;
+}
+
+/* ========================================
+   BUTOANE DESCARCARE ANDROID / WINDOWS
+   ======================================== */
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    margin: 30px auto;
+}
+
+.download-buttons .download-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 280px;
+    min-height: 62px;
+    padding: 15px 22px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+    transition: transform .2s, box-shadow .2s, filter .2s;
+}
+
+.download-buttons .android-btn {
+    background: linear-gradient(135deg, #35c96b, #159447);
+}
+
+.download-buttons .windows-btn {
+    background: linear-gradient(135deg, #1688ed, #0755bd);
+}
+
+.download-buttons .download-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .35);
+}
+
+.download-buttons .download-btn:active {
+    transform: scale(.97);
+}
+
+/* ========================================
+   BUTON JOACA IN BROWSER
+   ======================================== */
+
+.download-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 22px;
+    border-radius: 12px;
+    background: #3478e5;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.download-button:hover {
+    background: #2163c9;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE - TABLETE SI TELEFOANE
+   ======================================== */
+
+@media (max-width: 760px) {
+    .product-page-container {
+        width: calc(100% - 22px);
+        margin-top: 18px;
+    }
+
+    .product-hero {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 15px;
+    }
+
+    .product-image-wrap {
+        min-height: 230px;
+    }
+
+    .product-main-image {
+        max-height: 300px;
+    }
+
+    .product-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+    }
+
+    .info-card {
+        padding: 13px;
+    }
+
+    .product-section {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .download-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .download-buttons .download-btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-info-grid {
+        grid-template-columns: 1fr;
+    }
+}

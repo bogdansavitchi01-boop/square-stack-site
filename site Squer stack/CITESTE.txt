@@ -1,0 +1,6 @@
+Square Stack Store 2.1
+Deschide magazin.html sau index.html în browser.
+Magazin demonstrativ: fără plăți reale.
+Categoria Moduri include Advanced Building 1.0. Urmează instrucțiunile din mods/README.txt pentru descărcare.
+Previzualizarea 3D locală afișează stratul de bază al unui skin clasic 64x64.
+Fișierele EXE/APK și adresa jocului online lipsesc; butoanele de pe pagina principală sunt dezactivate.
